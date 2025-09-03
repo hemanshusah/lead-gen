@@ -1,0 +1,2 @@
+<?php echo $__env->make('pages.reports.invoices.category.filter', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('pages.reports.invoices.category.table', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /www/wwwroot/backend3/crm/mycrm/application/resources/views/pages/reports/invoices/category/wrapper.blade.php ENDPATH**/ ?>
