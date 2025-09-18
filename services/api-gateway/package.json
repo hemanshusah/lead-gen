@@ -1,0 +1,79 @@
+{
+  "name": "api-gateway",
+  "version": "0.0.1",
+  "description": "services",
+  "keywords": [
+    "loopback-application",
+    "loopback"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": "18 || 20 || 22"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "build:watch": "lb-tsc --watch",
+    "lint": "yarn run eslint && yarn run prettier:check",
+    "lint:fix": "yarn run eslint:fix && yarn run prettier:fix",
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
+    "prettier:check": "yarn run prettier:cli -l",
+    "prettier:fix": "yarn run prettier:cli --write",
+    "eslint": "lb-eslint --report-unused-disable-directives .",
+    "eslint:fix": "yarn run eslint --fix",
+    "pretest": "yarn run rebuild",
+    "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
+    "posttest": "yarn run lint",
+    "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && yarn run posttest",
+    "docker:build": "docker build -t api-gateway .",
+    "docker:run": "docker run -p 3000:3000 -d api-gateway",
+    "premigrate": "yarn run build",
+    "migrate": "node ./dist/migrate",
+    "preopenapi-spec": "yarn run build",
+    "openapi-spec": "node ./dist/openapi-spec",
+    "prestart": "yarn run rebuild",
+    "start": "node -r source-map-support/register .",
+    "start:dev": "nodemon --watch src --ext ts,js --exec \"yarn run rebuild && node -r source-map-support/register .\"",
+    "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
+    "rebuild": "yarn run clean && yarn run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Ansh Rochan <arochan@diligent.com>",
+  "license": "",
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@loopback/boot": "^7.0.14",
+    "@loopback/core": "^6.1.11",
+    "@loopback/metadata": "^7.0.14",
+    "@loopback/repository": "^7.0.14",
+    "@loopback/rest": "^14.0.14",
+    "@loopback/rest-explorer": "^7.0.14",
+    "@loopback/service-proxy": "^7.0.14",
+    "@types/bcryptjs": "^3.0.0",
+    "@types/uuid": "^10.0.0",
+    "bcryptjs": "^3.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "loopback-connector-postgresql": "^7.0.2",
+    "tslib": "^2.0.0",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@loopback/build": "^11.0.12",
+    "@loopback/eslint-config": "^15.0.5",
+    "@loopback/testlab": "^7.0.13",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^16.18.126",
+    "eslint": "^8.57.1",
+    "nodemon": "^3.1.10",
+    "source-map-support": "^0.5.21",
+    "typescript": "~5.2.2"
+  }
+}

@@ -1,32 +1,40 @@
 import React, { useState } from 'react';
-import { Input } from '../../atoms/Input/Input';
-import { Button } from '../../atoms/Button/Button';
+import { InputGroup, InputLeftElement, InputRightElement, IconButton } from '@chakra-ui/react';
+import { FiSearch, FiX } from 'react-icons/fi';
+import { Input } from '../../atoms/Input';
 
-interface SearchBarProps {
+export interface SearchBarProps {
   placeholder?: string;
   onSearch?: (query: string) => void;
   onClear?: () => void;
+  value?: string;
+  onChange?: (value: string) => void;
   className?: string;
-  showClearButton?: boolean;
-  autoFocus?: boolean;
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({
   placeholder = 'Search...',
   onSearch,
   onClear,
-  className = '',
-  showClearButton = true,
-  autoFocus = false,
+  value,
+  onChange,
+  className,
 }) => {
-  const [query, setQuery] = useState('');
+  const [searchValue, setSearchValue] = useState(value || '');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+    setSearchValue(newValue);
+    onChange?.(newValue);
+  };
 
   const handleSearch = () => {
-    onSearch?.(query);
+    onSearch?.(searchValue);
   };
 
   const handleClear = () => {
-    setQuery('');
+    setSearchValue('');
+    onChange?.('');
     onClear?.();
   };
 
@@ -37,24 +45,27 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   return (
-    <div className={`flex gap-2 ${className}`}>
+    <InputGroup className={className}>
+      <InputLeftElement pointerEvents="none">
+        <FiSearch color="gray.300" />
+      </InputLeftElement>
       <Input
-        type="text"
         placeholder={placeholder}
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        value={searchValue}
+        onChange={handleChange}
         onKeyPress={handleKeyPress}
-        autoFocus={autoFocus}
-        className="flex-1"
       />
-      <Button onClick={handleSearch} variant="primary">
-        Search
-      </Button>
-      {showClearButton && query && (
-        <Button onClick={handleClear} variant="outline">
-          Clear
-        </Button>
+      {searchValue && (
+        <InputRightElement>
+          <IconButton
+            aria-label="Clear search"
+            icon={<FiX />}
+            size="sm"
+            variant="ghost"
+            onClick={handleClear}
+          />
+        </InputRightElement>
       )}
-    </div>
+    </InputGroup>
   );
 };
