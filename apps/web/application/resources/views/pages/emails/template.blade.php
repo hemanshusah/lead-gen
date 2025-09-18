@@ -1,1 +1,0 @@
-{!! cleanEmail($content) !!}

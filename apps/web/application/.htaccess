@@ -1,4 +1,0 @@
-<IfModule mod_rewrite.c>
-    ## NEXTLOOP - PREVENT DIRECT ACCESS TO CORE
-    ## Deny from  all
-</IfModule>

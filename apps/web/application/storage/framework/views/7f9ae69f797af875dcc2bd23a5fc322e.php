@@ -1,1 +1,0 @@
-<div class="progress-bar bg-success h-px-6 <?php echo e($progress['bar']); ?>"role="progressbar"></div><?php /**PATH /www/wwwroot/backend3/crm/mycrm/application/resources/views/pages/lead/components/progressbar.blade.php ENDPATH**/ ?>

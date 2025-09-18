@@ -1,0 +1,96 @@
+.gl-wrapper {
+	background: #0a0a0a;
+	color: #fafafa;
+	border-radius: 16px;
+	padding: 16px;
+	border: 1px solid #1f1f1f;
+}
+
+.gl-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 12px;
+}
+
+.gl-title {
+	font-size: 20px;
+	font-weight: 600;
+	margin: 0;
+}
+
+.btn {
+	border-radius: 9999px;
+	padding: 6px 12px;
+	font-size: 13px;
+	cursor: pointer;
+	border: 1px solid #2b2b2b;
+	background: transparent;
+	color: #fafafa;
+}
+
+.btn:hover { border-color: #555; }
+.btn-outline { background: transparent; }
+
+.gl-table {
+	background: #111;
+	border: 1px solid #1f1f1f;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.gl-thead, .gl-row {
+	display: grid;
+	grid-template-columns: 112px 1.3fr 1fr 1fr 1fr 96px;
+	align-items: center;
+}
+
+.gl-thead { background: #151515; }
+
+.gl-th, .gl-td {
+	padding: 12px 16px;
+	border-bottom: 1px solid #1f1f1f;
+	font-size: 12px;
+}
+
+.gl-row { background: #101010; }
+.gl-row:nth-child(even) { background: #0e0e0e; }
+
+.truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.w-56 { width: 112px; }
+
+.gl-actions { display: flex; gap: 10px; }
+
+.icon-btn {
+	width: 28px;
+	height: 28px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	background: #171717;
+	border: 1px solid #2a2a2a;
+	color: #eaeaea;
+}
+.icon-btn:hover { background: #1d1d1d; }
+.icon-btn.danger { color: #ff4d4f; border-color: #3a1f1f; background: #1a0f10; }
+.icon-btn.danger:hover { background: #211315; }
+
+.badge {
+	border-radius: 9999px;
+	padding: 2px 8px;
+	font-size: 11px;
+	border: 1px solid transparent;
+}
+.badge-running { color: #f0f0f0; background: #11340f; border-color: #285c24; }
+.badge-validating { color: #f0f0f0; background: #112234; border-color: #274d78; }
+.badge-completed { color: #0f0; background: #0b2c0b; border-color: #164c16; }
+.badge-queued { color: #eaeaea; background: #2a2a2a; border-color: #3a3a3a; }
+.badge-failed { color: #fff; background: #3a1212; border-color: #7a1f1f; }
+
+

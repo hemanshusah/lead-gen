@@ -1,1 +1,0 @@
-<div class="progress-bar bg-success h-px-6 {{ $progress['bar'] }}"role="progressbar"></div>

@@ -1,1 +1,0 @@
-<div class="progress-bar bg-success h-px-6 {{ $progress['bar'] ?? 'w-0' }}" id="card-checklist-progress-bar" role="progressbar"></div>
