@@ -6329,6 +6329,337 @@ const Ni = {
                         })]
                     })]
                 })]
+            }), n.jsxs("section", {
+                className: "relative py-20 px-4 bg-gradient-to-b from-orange-950/20 via-gray-900 to-black min-h-screen overflow-hidden",
+                id: "features-section",
+                children: [n.jsx("div", {
+                    className: "absolute inset-0 opacity-[0.02]",
+                    style: {
+                        backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E\")"
+                    }
+                }), n.jsxs("div", {
+                    className: "absolute inset-0 pointer-events-none",
+                    children: [n.jsx("div", {
+                        className: "absolute top-10 left-10 w-4 h-4 bg-gradient-to-br from-orange-300/30 to-pink-300/20 rounded-full animate-float shadow-lg shadow-orange-300/10"
+                    }), n.jsx("div", {
+                        className: "absolute top-32 right-20 w-6 h-6 bg-gradient-to-br from-orange-400/25 to-purple-300/15 rounded-full animate-float-delayed shadow-lg shadow-orange-400/10"
+                    }), n.jsx("div", {
+                        className: "absolute bottom-40 left-1/4 w-5 h-5 bg-gradient-to-br from-orange-500/25 to-red-300/20 rounded-full animate-float-slow shadow-lg shadow-orange-500/10"
+                    }), n.jsx("div", {
+                        className: "absolute top-64 right-1/3 w-3 h-3 bg-gradient-to-br from-orange-400/35 to-yellow-300/20 rounded-full animate-float shadow-lg shadow-orange-400/10"
+                    }), n.jsx("div", {
+                        className: "absolute top-1/4 right-1/4 w-2 h-2 bg-orange-300/40 rounded-full animate-float-delayed"
+                    }), n.jsx("div", {
+                        className: "absolute bottom-1/3 right-1/3 w-3 h-3 bg-pink-300/30 rounded-full animate-float-slow"
+                    }), n.jsx("div", {
+                        className: "absolute top-1/2 left-1/6 w-1.5 h-1.5 bg-purple-300/35 rounded-full animate-float"
+                    }), n.jsx("div", {
+                        className: "absolute top-20 right-1/4 w-8 h-8 border border-orange-300/10 rotate-45 animate-float-slow"
+                    }), n.jsx("div", {
+                        className: "absolute bottom-20 left-1/3 w-6 h-6 border border-pink-300/15 rounded-full animate-float-delayed"
+                    })]
+                }), n.jsx("div", {
+                    className: "absolute inset-0 pointer-events-none opacity-5",
+                    children: n.jsx("div", {
+                        className: "h-full w-full",
+                        style: {
+                            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)"
+                        }
+                    })
+                }), n.jsxs("div", {
+                    className: "relative max-w-7xl mx-auto",
+                    children: [n.jsxs("div", {
+                        className: "text-center mb-16",
+                        children: [n.jsxs("h2", {
+                            className: "text-4xl md:text-6xl font-bold mb-6 relative tracking-wide",
+                            children: [n.jsx("span", {
+                                className: "bg-gradient-to-r from-orange-400 via-pink-300 to-orange-500 bg-clip-text text-transparent drop-shadow-2xl filter",
+                                children: "Our Features"
+                            }), n.jsx("div", {
+                                className: "absolute inset-0 bg-gradient-to-r from-orange-400 via-pink-300 to-orange-500 bg-clip-text text-transparent blur-xl opacity-20 scale-110 -z-10",
+                                children: "Our Features"
+                            }), n.jsx("div", {
+                                className: "absolute inset-0 bg-gradient-to-r from-orange-400 via-pink-300 to-orange-500 bg-clip-text text-transparent blur-2xl opacity-10 scale-125 -z-20",
+                                children: "Our Features"
+                            })]
+                        }), n.jsx("p", {
+                            className: "text-xl md:text-2xl text-orange-100/90 mb-8 max-w-3xl mx-auto font-light leading-relaxed",
+                            children: n.jsx("span", {
+                                className: "text-orange-300/80",
+                                children: "Smarter Services, Built with AI"
+                            })
+                        }), n.jsx("p", {
+                            className: "text-lg text-orange-200/70 max-w-2xl mx-auto",
+                            children: "Everything you need to automate operations, boost productivity."
+                        })]
+                    }), n.jsxs("div", {
+                        className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+                        children: [n.jsxs("div", {
+                            className: "group relative bg-gray-800/20 backdrop-blur-sm border border-orange-400/20 rounded-2xl p-8 hover:border-orange-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 animate-card-hover animate-border-glow animate-inner-glow",
+                            children: [n.jsx("div", {
+                                className: "absolute inset-0 bg-gradient-to-br from-orange-500/5 via-orange-400/3 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            }), n.jsx("h3", {
+                                className: "text-2xl font-bold text-white mb-4 group-hover:text-orange-300 transition-colors duration-300",
+                                children: "Automate repetitive tasks"
+                            }), n.jsx("p", {
+                                className: "text-gray-300 mb-6 leading-relaxed",
+                                children: "We help you streamline internal operations by automating manual workflows"
+                            }), n.jsxs("div", {
+                                className: "space-y-3",
+                                children: [n.jsxs("div", {
+                                    className: "flex items-center justify-between p-3 bg-gray-700/30 rounded-lg group-hover:bg-gray-700/50 transition-colors duration-300 animate-shimmer",
+                                    children: [n.jsx("span", {
+                                        className: "text-gray-300 text-sm",
+                                        children: "Social media post"
+                                    }), n.jsx("div", {
+                                        className: "flex items-center space-x-2",
+                                        children: [n.jsx("div", {
+                                            className: "w-4 h-4 border border-red-400 rounded flex items-center justify-center",
+                                            children: n.jsx("span", {
+                                                className: "text-red-400 text-xs",
+                                                children: "✕"
+                                            })
+                                        }), n.jsx("div", {
+                                            className: "w-4 h-4 bg-green-500 rounded flex items-center justify-center",
+                                            children: n.jsx("span", {
+                                                className: "text-white text-xs",
+                                                children: "✓"
+                                            })
+                                        })]
+                                    })]
+                                }), n.jsxs("div", {
+                                    className: "flex items-center justify-between p-3 bg-gray-700/20 rounded-lg group-hover:bg-gray-700/40 transition-colors duration-300 opacity-60",
+                                    children: [n.jsx("span", {
+                                        className: "text-gray-300 text-sm",
+                                        children: "Employee Tracking"
+                                    }), n.jsx("div", {
+                                        className: "flex items-center space-x-2",
+                                        children: [n.jsx("div", {
+                                            className: "w-4 h-4 bg-gray-600 rounded-full flex items-center justify-center",
+                                            children: n.jsx("span", {
+                                                className: "text-gray-400 text-xs",
+                                                children: "👥"
+                                            })
+                                        }), n.jsx("div", {
+                                            className: "w-4 h-4 bg-gray-600 rounded flex items-center justify-center",
+                                            children: n.jsx("span", {
+                                                className: "text-gray-400 text-xs",
+                                                children: "↻"
+                                            })
+                                        })]
+                                    })]
+                                }), n.jsxs("div", {
+                                    className: "flex items-center justify-between p-3 bg-gray-700/30 rounded-lg group-hover:bg-gray-700/50 transition-colors duration-300 animate-shimmer",
+                                    children: [n.jsx("span", {
+                                        className: "text-gray-300 text-sm",
+                                        children: "Payment reminder"
+                                    }), n.jsx("div", {
+                                        className: "flex items-center space-x-2",
+                                        children: [n.jsx("div", {
+                                            className: "w-4 h-4 bg-gray-600 rounded flex items-center justify-center",
+                                            children: n.jsx("span", {
+                                                className: "text-gray-400 text-xs",
+                                                children: "🕐"
+                                            })
+                                        }), n.jsx("div", {
+                                            className: "w-4 h-4 bg-green-500 rounded flex items-center justify-center",
+                                            children: n.jsx("span", {
+                                                className: "text-white text-xs",
+                                                children: "✓"
+                                            })
+                                        })]
+                                    })]
+                                })]
+                            })]
+                        }), n.jsxs("div", {
+                            className: "group relative bg-gray-800/20 backdrop-blur-sm border border-orange-400/20 rounded-2xl p-8 hover:border-orange-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 animate-card-hover animate-border-glow animate-inner-glow",
+                            children: [n.jsx("div", {
+                                className: "absolute inset-0 bg-gradient-to-br from-orange-500/5 via-orange-400/3 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            }), n.jsx("h3", {
+                                className: "text-2xl font-bold text-white mb-4 group-hover:text-orange-300 transition-colors duration-300",
+                                children: "Automated Workflows"
+                            }), n.jsx("p", {
+                                className: "text-gray-300 mb-6 leading-relaxed",
+                                children: "Boost efficiency across teams with smart automation. Build intelligent workflows that automate multi-step processes across tools and platforms."
+                            }), n.jsx("div", {
+                                className: "relative flex items-center justify-center h-32",
+                                children: [n.jsx("div", {
+                                    className: "absolute inset-0 flex items-center justify-center",
+                                    children: n.jsx("div", {
+                                        className: "w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full flex items-center justify-center shadow-lg shadow-orange-400/30 animate-glow-pulse",
+                                        children: n.jsx("span", {
+                                            className: "text-white text-2xl",
+                                            children: "⭐"
+                                        })
+                                    })
+                                }), n.jsx("div", {
+                                    className: "absolute top-2 left-4 w-6 h-6 bg-gray-600 rounded flex items-center justify-center",
+                                    children: n.jsx("span", {
+                                        className: "text-gray-300 text-xs",
+                                        children: "✉"
+                                    })
+                                }), n.jsx("div", {
+                                    className: "absolute top-4 right-6 w-6 h-6 bg-gray-600 rounded flex items-center justify-center",
+                                    children: n.jsx("span", {
+                                        className: "text-gray-300 text-xs",
+                                        children: "🌀"
+                                    })
+                                }), n.jsx("div", {
+                                    className: "absolute top-8 right-2 w-6 h-6 bg-gray-600 rounded flex items-center justify-center",
+                                    children: n.jsx("span", {
+                                        className: "text-gray-300 text-xs",
+                                        children: "✕"
+                                    })
+                                }), n.jsx("div", {
+                                    className: "absolute bottom-8 right-4 w-6 h-6 bg-gray-600 rounded flex items-center justify-center",
+                                    children: n.jsx("span", {
+                                        className: "text-gray-300 text-xs",
+                                        children: "N"
+                                    })
+                                }), n.jsx("div", {
+                                    className: "absolute bottom-4 left-6 w-6 h-6 bg-gray-600 rounded flex items-center justify-center",
+                                    children: n.jsx("span", {
+                                        className: "text-gray-300 text-xs",
+                                        children: "📄"
+                                    })
+                                }), n.jsx("div", {
+                                    className: "absolute bottom-2 right-8 w-6 h-6 bg-gray-600 rounded flex items-center justify-center",
+                                    children: n.jsx("span", {
+                                        className: "text-gray-300 text-xs",
+                                        children: "👤"
+                                    })
+                                }), n.jsx("div", {
+                                    className: "absolute top-6 left-2 w-6 h-6 bg-gray-600 rounded flex items-center justify-center",
+                                    children: n.jsx("span", {
+                                        className: "text-gray-300 text-xs",
+                                        children: "B"
+                                    })
+                                })]
+                            })]
+                        }), n.jsxs("div", {
+                            className: "group relative bg-gray-800/20 backdrop-blur-sm border border-orange-400/20 rounded-2xl p-8 hover:border-orange-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 animate-card-hover animate-border-glow animate-inner-glow",
+                            children: [n.jsx("div", {
+                                className: "absolute inset-0 bg-gradient-to-br from-orange-500/5 via-orange-400/3 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            }), n.jsx("h3", {
+                                className: "text-2xl font-bold text-white mb-4 group-hover:text-orange-300 transition-colors duration-300",
+                                children: "Real-Time Intelligence"
+                            }), n.jsx("p", {
+                                className: "text-gray-300 mb-6 leading-relaxed",
+                                children: "Make smarter decisions with live data insights. Tap into real-time data."
+                            }), n.jsxs("div", {
+                                className: "space-y-4",
+                                children: [n.jsx("div", {
+                                    className: "bg-gray-700/30 rounded-lg p-4",
+                                    children: n.jsx("div", {
+                                        className: "flex items-center space-x-2 mb-3",
+                                        children: [n.jsx("input", {
+                                            type: "text",
+                                            placeholder: "Research anything...",
+                                            className: "flex-1 bg-gray-600/50 border border-gray-500 rounded px-3 py-2 text-sm text-gray-300 placeholder-gray-400 focus:outline-none focus:border-orange-400",
+                                            readOnly: true
+                                        }), n.jsx("button", {
+                                            className: "bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm transition-colors duration-200",
+                                            children: "Research"
+                                        })]
+                                    })
+                                }), n.jsxs("div", {
+                                    className: "space-y-2",
+                                    children: [n.jsxs("div", {
+                                        className: "flex items-center justify-between p-2 bg-gray-700/20 rounded",
+                                        children: [n.jsx("span", {
+                                            className: "text-gray-300 text-sm",
+                                            children: "Software & App Industry"
+                                        }), n.jsx("div", {
+                                            className: "w-4 h-4 bg-gray-600 rounded flex items-center justify-center",
+                                            children: n.jsx("span", {
+                                                className: "text-gray-400 text-xs",
+                                                children: "📈"
+                                            })
+                                        })]
+                                    }), n.jsxs("div", {
+                                        className: "flex items-center justify-between p-2 bg-gray-700/20 rounded",
+                                        children: [n.jsx("span", {
+                                            className: "text-gray-300 text-sm",
+                                            children: "UX & UI Design Industry"
+                                        }), n.jsx("div", {
+                                            className: "w-4 h-4 bg-gray-600 rounded flex items-center justify-center",
+                                            children: n.jsx("span", {
+                                                className: "text-gray-400 text-xs",
+                                                children: "📈"
+                                            })
+                                        })]
+                                    }), n.jsxs("div", {
+                                        className: "flex items-center justify-between p-2 bg-gray-700/20 rounded",
+                                        children: [n.jsx("span", {
+                                            className: "text-gray-300 text-sm",
+                                            children: "High Converting Customer"
+                                        }), n.jsx("div", {
+                                            className: "w-4 h-4 bg-gray-600 rounded flex items-center justify-center",
+                                            children: n.jsx("span", {
+                                                className: "text-gray-400 text-xs",
+                                                children: "📈"
+                                            })
+                                        })]
+                                    })]
+                                })]
+                            })]
+                        }), n.jsxs("div", {
+                            className: "group relative bg-gray-800/20 backdrop-blur-sm border border-orange-400/20 rounded-2xl p-8 hover:border-orange-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 animate-card-hover animate-border-glow animate-inner-glow",
+                            children: [n.jsx("div", {
+                                className: "absolute inset-0 bg-gradient-to-br from-orange-500/5 via-orange-400/3 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            }), n.jsx("h3", {
+                                className: "text-2xl font-bold text-white mb-4 group-hover:text-orange-300 transition-colors duration-300",
+                                children: "Custom AI Agent development"
+                            }), n.jsx("p", {
+                                className: "text-gray-300 mb-6 leading-relaxed",
+                                children: "We develop custom AI agents that integrate seamlessly with your tools."
+                            }), n.jsx("div", {
+                                className: "bg-gray-900/50 rounded-lg p-4 font-mono text-sm",
+                                children: n.jsx("pre", {
+                                    className: "text-gray-300",
+                                    children: n.jsx("code", {
+                                        children: "class AutomationAgent {\n  __init__(self):\n    self.activation_limit = 100\n    self.current_mode = \"idle\"\n\n  def evaluate_task(self):\n    # AI logic here\n    pass"
+                                    })
+                                })
+                            })]
+                        }), n.jsxs("div", {
+                            className: "group relative bg-gray-800/20 backdrop-blur-sm border border-orange-400/20 rounded-2xl p-8 hover:border-orange-400/40 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/10 animate-card-hover animate-border-glow animate-inner-glow",
+                            children: [n.jsx("div", {
+                                className: "absolute inset-0 bg-gradient-to-br from-orange-500/5 via-orange-400/3 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            }), n.jsx("h3", {
+                                className: "text-2xl font-bold text-white mb-4 group-hover:text-orange-300 transition-colors duration-300",
+                                children: "AI Strategy Consulting"
+                            }), n.jsx("p", {
+                                className: "text-gray-300 mb-6 leading-relaxed",
+                                children: "Get expert guidance to implement AI solutions that drive business growth."
+                            }), n.jsx("div", {
+                                className: "relative flex items-center justify-center h-32",
+                                children: [n.jsx("div", {
+                                    className: "absolute inset-0 flex items-center justify-center",
+                                    children: n.jsx("div", {
+                                        className: "w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full flex items-center justify-center shadow-lg shadow-orange-400/30 animate-glow-pulse",
+                                        children: n.jsx("span", {
+                                            className: "text-white text-2xl",
+                                            children: "⭐"
+                                        })
+                                    })
+                                }), n.jsx("div", {
+                                    className: "absolute top-4 left-8 w-8 h-8 border-2 border-gray-500 rounded-full"
+                                }), n.jsx("div", {
+                                    className: "absolute bottom-4 right-8 w-8 h-8 border-2 border-gray-500 rounded-full flex items-center justify-center",
+                                    children: n.jsx("span", {
+                                        className: "text-gray-400 text-xs",
+                                        children: "📊"
+                                    })
+                                }), n.jsx("div", {
+                                    className: "absolute top-1/2 left-1/2 w-0.5 h-16 bg-gradient-to-b from-orange-400 to-pink-400 opacity-50"
+                                }), n.jsx("div", {
+                                    className: "absolute top-1/2 left-1/2 w-16 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 opacity-50"
+                                })]
+                            })]
+                        })]
+                    })]
+                })]
             }), n.jsxs("footer", {
                 className: "relative bg-gradient-to-b from-orange-950/20 to-black py-16 px-4",
                 children: [n.jsx("div", {
