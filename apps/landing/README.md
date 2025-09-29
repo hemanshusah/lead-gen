@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LeadSpark - Lead Generation Platform
 
-## Getting Started
+LeadSpark is a powerful AI-powered platform that helps businesses generate, manage, and convert high-quality leads across various industries.
 
-First, run the development server:
+## Features
 
+- **AI-Powered Lead Generation**: Identify and target high-intent prospects
+- **Multi-Industry Support**: Real estate, SaaS, e-commerce, B2B sales, and more
+- **Automated Follow-ups**: Personalized nurturing sequences
+- **CRM Integration**: Seamless integration with popular CRMs
+- **Analytics Dashboard**: Comprehensive lead tracking and ROI metrics
+
+## Tech Stack
+
+- **Frontend**: React, HTML5, CSS3, JavaScript
+- **Backend**: Node.js, Express.js
+- **Database**: PostgreSQL
+- **Authentication**: JWT-based authentication
+- **Package Manager**: Yarn (as per CTO requirements)
+- **Deployment**: Static hosting ready
+
+## Prerequisites
+
+- Node.js (v16 or higher)
+- Yarn package manager
+- Python 3 (for frontend serving)
+- PostgreSQL database access
+
+## Quick Start
+
+### 1. Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Navigate to landing directory
+cd apps/landing
+
+# Install Yarn globally (if not already installed)
+npm install -g yarn
+
+# Install project dependencies
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configure Database
+- Database credentials are already configured in `server.js`
+- Ensure PostgreSQL database is accessible
+- Database: `leadgen` on host `62.72.57.136`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Start the Application
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Option A: Start Both Services (Recommended)
+```bash
+# Start both backend and frontend
+yarn serve
+```
 
-## Learn More
+#### Option B: Start Services Separately
+```bash
+# Terminal 1: Start backend server
+yarn start
 
-To learn more about Next.js, take a look at the following resources:
+# Terminal 2: Start frontend server
+yarn frontend
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Access the Application
+- **Frontend**: http://localhost:8010
+- **Backend API**: http://localhost:3001
+- **Health Check**: http://localhost:3001/api/health
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Available Scripts
 
-## Deploy on Vercel
+- `yarn start` - Start the backend server
+- `yarn dev` - Start backend in development mode with nodemon
+- `yarn frontend` - Start frontend static server
+- `yarn serve` - Start both backend and frontend
+- `yarn build` - Build command (no build step required for static site)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development Workflow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Making Changes
+1. Create a new branch: `git checkout -b feature/your-feature-name`
+2. Make your changes
+3. Test locally: `yarn serve`
+4. Commit changes: `git add . && git commit -m "Description of changes"`
+5. Push branch: `git push origin feature/your-feature-name`
+6. Create Pull Request on GitHub
+
+### Code Structure
+```
+landing/
+├── public/                # Static assets and images
+│   ├── logo.png
+│   ├── bg1.png
+│   ├── bg2.png
+│   └── leadspark-in-action.png
+├── assets/                # Compiled frontend assets
+├── server.js              # Backend API server
+├── api-service.js         # Frontend API service
+├── config.js              # Configuration file
+├── index.html             # Main landing page
+├── package.json           # Dependencies and scripts
+├── yarn.lock             # Yarn lockfile
+└── README.md             # This file
+```
+
+## API Endpoints
+
+- `GET /api/health` - Health check
+- `POST /api/waitlist` - Add to waitlist
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User authentication
+- `GET /api/auth/profile` - Get user profile (protected)
+- `GET /api/leads` - Get user leads (protected)
+- `POST /api/leads` - Create new lead (protected)
+
+## Production Deployment
+
+This application is ready for static hosting deployment:
+
+- **Frontend**: Deploy the root directory to any static hosting service
+- **Backend**: Deploy the Node.js server to your preferred hosting platform
+- **Database**: PostgreSQL database is already configured
+
+## Troubleshooting
+
+### Common Issues
+1. **Port already in use**: Kill existing processes on ports 3001 or 8010
+2. **Database connection failed**: Check PostgreSQL credentials in `server.js`
+3. **Yarn not found**: Install yarn globally with `npm install -g yarn`
+
+### Health Checks
+```bash
+# Check backend health
+curl http://localhost:3001/api/health
+
+# Check frontend
+curl -I http://localhost:8010
+```
+
+## Support
+
+For support and questions, please contact the LeadSpark team.
+
+---
+
+© 2024 LeadSpark. All rights reserved.

@@ -5976,11 +5976,11 @@ const Ni = {
                 children: [n.jsxs("div", {
                     className: "absolute inset-0 z-0",
                     children: [n.jsx("img", {
-                        src: "/bg1.png",
+                        src: "/public/bg1.png",
                         alt: "",
                         className: "hidden md:block w-full h-full object-cover"
                     }), n.jsx("img", {
-                        src: "/bg2.png",
+                        src: "/public/bg2.png",
                         alt: "",
                         className: "md:hidden w-full h-full object-cover"
                     }), n.jsx("div", {
@@ -6286,7 +6286,7 @@ const Ni = {
                         }), n.jsx("div", {
                             className: "absolute inset-0 bg-gradient-to-tl from-purple-500/3 to-transparent rounded-2xl"
                         }), n.jsx("img", {
-                            src: "/leadspark-in-action.png",
+                            src: "/public/leadspark-in-action.png",
                             alt: "LeadSpark platform showing lead management dashboard with verified leads and analytics",
                             className: "w-full h-auto transition-all duration-700 group-hover:scale-105 group-hover:saturate-110 filter contrast-95 brightness-95",
                             onError: e => {
@@ -28647,7 +28647,7 @@ const _f = [{
                                 children: [n.jsxs("div", {
                                     className: "flex items-center gap-3 mb-2",
                                     children: [n.jsx("img", {
-                                        src: "/logo.png",
+                                        src: "/public/logo.png",
                                         alt: "LeadSpark Logo",
                                         className: "w-10 h-10 object-contain"
                                     }), n.jsx("h2", {
@@ -28801,7 +28801,7 @@ const _f = [{
                                 children: [n.jsxs("div", {
                                     className: "flex items-center gap-3 mb-4",
                                     children: [n.jsx("img", {
-                                        src: "/logo.png",
+                                        src: "/public/logo.png",
                                         alt: "LeadSpark Logo",
                                         className: "w-10 h-10 object-contain"
                                     }), n.jsxs("div", {
@@ -35755,7 +35755,7 @@ const Bk = () => {
                         }), n.jsxs("div", {
                             className: "relative mx-auto w-20 h-20",
                             children: [n.jsx("img", {
-                                src: "/logo.png",
+                                src: "/public/logo.png",
                                 alt: "LeadSpark Logo",
                                 className: "w-full h-full object-contain"
                             }), n.jsx("div", {
@@ -35801,7 +35801,7 @@ const Bk = () => {
                     children: n.jsx("div", {
                         className: "w-20 h-20 rounded-xl mx-auto",
                         children: n.jsx("img", {
-                            src: "/logo.png",
+                            src: "/public/logo.png",
                             alt: "LeadSpark Logo",
                             className: "w-full h-full object-contain"
                         })
@@ -35925,7 +35925,7 @@ const Bk = () => {
                     }), n.jsxs("div", {
                         className: "w-20 h-20 rounded-xl mx-auto mb-4 relative overflow-hidden",
                         children: [n.jsx("img", {
-                            src: "/logo.png",
+                            src: "/public/logo.png",
                             alt: "LeadSpark Logo",
                             className: "w-full h-full object-contain"
                         }), n.jsx("div", {
@@ -36269,7 +36269,7 @@ const Bk = () => {
                     children: [n.jsx("div", {
                         className: "text-center mb-4",
                         children: n.jsx("img", {
-                            src: "/logo.png",
+                            src: "/public/logo.png",
                             alt: "LeadSpark",
                             className: "w-8 h-8 mx-auto mb-2 object-contain"
                         })
@@ -36405,7 +36405,7 @@ const Bk = () => {
                 children: [n.jsxs("div", {
                     className: "absolute inset-0",
                     children: [n.jsx("img", {
-                        src: "/bg1.png",
+                        src: "/public/bg1.png",
                         alt: "",
                         className: "w-full h-full object-cover"
                     }), n.jsx("div", {
@@ -36459,7 +36459,7 @@ const Bk = () => {
             }), n.jsx("div", {
                 className: "w-16 h-16 mx-auto mb-4",
                 children: n.jsx("img", {
-                    src: "/logo.png",
+                                            src: "/public/logo.png",
                     alt: "LeadSpark",
                     className: "w-full h-full object-contain"
                 })
@@ -36964,7 +36964,7 @@ const tj = {
                     children: [n.jsxs("div", {
                         className: "text-center mb-8",
                         children: [n.jsx("img", {
-                            src: "/logo.png",
+                            src: "/public/logo.png",
                             alt: "LeadSpark",
                             className: "w-16 h-16 mx-auto mb-4 object-contain"
                         }), n.jsx("h1", {
@@ -37252,7 +37252,7 @@ const tj = {
                 children: [n.jsx("div", {
                     className: "mb-8",
                     children: n.jsx("img", {
-                        src: "/logo.png",
+                        src: "/public/logo.png",
                         alt: "LeadSpark",
                         className: "w-12 h-12 mx-auto mb-4 object-contain"
                     })
@@ -37303,7 +37303,7 @@ const tj = {
                         children: [n.jsx("div", {
                             className: "text-center mb-4",
                             children: n.jsx("img", {
-                                src: "/logo.png",
+                                src: "/public/logo.png",
                                 alt: "LeadSpark",
                                 className: "w-8 h-8 mx-auto mb-2 object-contain"
                             })
@@ -37483,7 +37483,7 @@ const tj = {
                     children: [n.jsxs("div", {
                         className: "absolute inset-0",
                         children: [n.jsx("img", {
-                            src: "/bg1.png",
+                            src: "/public/bg1.png",
                             alt: "",
                             className: "w-full h-full object-cover"
                         }), n.jsx("div", {
@@ -37530,7 +37530,7 @@ const tj = {
                 children: [n.jsx("div", {
                     className: "mb-8",
                     children: n.jsx("img", {
-                        src: "/logo.png",
+                        src: "/public/logo.png",
                         alt: "LeadSpark",
                         className: "w-12 h-12 mx-auto mb-4 object-contain"
                     })
@@ -37580,7 +37580,7 @@ const tj = {
                     children: [n.jsx("div", {
                         className: "text-center mb-8",
                         children: n.jsx("img", {
-                            src: "/logo.png",
+                            src: "/public/logo.png",
                             alt: "LeadSpark",
                             className: "w-12 h-12 mx-auto mb-4 object-contain"
                         })
@@ -37673,7 +37673,7 @@ const tj = {
                 children: [n.jsxs("div", {
                     className: "absolute inset-0",
                     children: [n.jsx("img", {
-                        src: "/bg1.png",
+                        src: "/public/bg1.png",
                         alt: "",
                         className: "w-full h-full object-cover"
                     }), n.jsx("div", {
@@ -37709,11 +37709,11 @@ const tj = {
         children: [n.jsxs("div", {
             className: "absolute inset-0 z-0",
             children: [n.jsx("img", {
-                src: "/bg1.png",
+                src: "/public/bg1.png",
                 alt: "",
                 className: "hidden lg:block w-full h-full object-cover"
             }), n.jsx("img", {
-                src: "/bg2.png",
+                src: "/public/bg2.png",
                 alt: "",
                 className: "lg:hidden w-full h-full object-cover"
             }), n.jsx("div", {
@@ -37743,7 +37743,7 @@ const tj = {
                     }), n.jsxs("div", {
                         className: "flex items-center mb-6",
                         children: [n.jsx("img", {
-                            src: "/logo.png",
+                            src: "/public/logo.png",
                             alt: "LeadSpark",
                             className: "w-8 h-8 object-contain mr-3"
                         }), n.jsx("span", {
@@ -38022,11 +38022,11 @@ const tj = {
         children: [n.jsxs("div", {
             className: "absolute inset-0 z-0",
             children: [n.jsx("img", {
-                src: "/bg1.png",
+                src: "/public/bg1.png",
                 alt: "",
                 className: "hidden lg:block w-full h-full object-cover"
             }), n.jsx("img", {
-                src: "/bg2.png",
+                src: "/public/bg2.png",
                 alt: "",
                 className: "lg:hidden w-full h-full object-cover"
             }), n.jsx("div", {
@@ -38056,7 +38056,7 @@ const tj = {
                     }), n.jsxs("div", {
                         className: "flex items-center mb-6",
                         children: [n.jsx("img", {
-                            src: "/logo.png",
+                            src: "/public/logo.png",
                             alt: "LeadSpark",
                             className: "w-8 h-8 object-contain mr-3"
                         }), n.jsx("span", {
@@ -39274,7 +39274,7 @@ const tj = {
                 children: [n.jsxs("div", {
                     className: "absolute inset-0 z-0",
                     children: [n.jsx("img", {
-                        src: "/bg1.png",
+                        src: "/public/bg1.png",
                         alt: "Background",
                         className: "w-full h-full object-cover"
                     }), n.jsx("div", {
@@ -40583,7 +40583,7 @@ const gj = () => {
                 children: n.jsx("div", {
                     className: "w-20 h-20 rounded-xl mx-auto",
                     children: n.jsx("img", {
-                        src: "/logo.png",
+                        src: "/public/logo.png",
                         alt: "LeadSpark Logo",
                         className: "w-full h-full object-contain"
                     })
@@ -42244,7 +42244,7 @@ function kj() {
                                     children: n.jsx("div", {
                                         className: "w-20 h-20 rounded-xl mx-auto",
                                         children: n.jsx("img", {
-                                            src: "/logo.png",
+                                            src: "/public/logo.png",
                                             alt: "LeadSpark Logo",
                                             className: "w-full h-full object-contain"
                                         })
