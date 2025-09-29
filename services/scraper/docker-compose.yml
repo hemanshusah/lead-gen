@@ -1,0 +1,53 @@
+# Docker Compose for Google Maps Scraper Service
+# This service can run in two modes:
+# 1. Direct mode: API server that runs scraping directly
+# 2. Docker trigger mode: API server that triggers Docker containers
+version: '3.8'
+
+services:
+  # Google Maps Scraper Service
+  # This is the main service that can trigger Docker containers
+  google-map-scraper-service:
+    build: .
+    image: google-map-scraper-service:latest
+    container_name: google-map-scraper-service
+    ports:
+      - "3012:3012"
+    volumes:
+      # Mount data directory for persistent storage
+      - ./data:/usr/src/app/data
+      # Mount jobs directory for Docker container communication
+      - ./jobs:/usr/src/app/jobs
+    environment:
+      - NODE_ENV=production
+      - PORT=3012
+    restart: unless-stopped
+    networks:
+      - scraper-network
+
+  # Google Maps Scraper Container (for Docker trigger mode)
+  # This container is built but only runs when triggered by the service
+  google-map-scraper-container:
+    build: .
+    image: google-map-scraper:latest
+    container_name: google-map-scraper-container
+    volumes:
+      # Mount data directory for results
+      - ./data:/app/data
+    environment:
+      - PLAYWRIGHT_BROWSERS_PATH=/usr/bin
+    # This service only runs when triggered by the main service
+    profiles:
+      - scraper
+    networks:
+      - scraper-network
+
+# Network for service communication
+networks:
+  scraper-network:
+    driver: bridge
+
+# Volumes for persistent data
+volumes:
+  scraper-data:
+    driver: local

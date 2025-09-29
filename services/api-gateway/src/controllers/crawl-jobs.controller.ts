@@ -28,13 +28,13 @@ export class CrawlJobsController {
   ) {}
 
   /**
-   * Get all crawl jobs for the authenticated user
-   * GET /crawl-jobs
+   * Get crawl jobs for the authenticated user with filtering options
+   * GET /crawl-jobs?status=running&source_id=1&search=restaurant
    */
   @get('/crawl-jobs')
   @intercept('interceptor.auth')
   @response(200, {
-    description: 'List of crawl jobs',
+    description: 'List of crawl jobs with filtering support',
     content: {
       'application/json': {
         schema: {
@@ -47,14 +47,28 @@ export class CrawlJobsController {
               items: {
                 type: 'object',
                 properties: {
-                  id: {type: 'number'},
-                  source_id: {type: 'number'},
+                  job_id: {type: 'string'},
+                  account_id: {type: 'number'},
+                  user_id: {type: 'number'},
+                  lead_source_id: {type: 'number'},
+                  params: {type: 'object'},
                   status: {type: 'string'},
-                  notes: {type: 'string'},
-                  created_by: {type: 'number'},
+                  start_time: {type: 'string'},
+                  end_time: {type: 'string'},
+                  records_scrapped: {type: 'number'},
+                  description: {type: 'string'},
+                  title: {type: 'string'},
                   created_at: {type: 'string'},
                   updated_at: {type: 'string'},
                 },
+              },
+            },
+            filters: {
+              type: 'object',
+              properties: {
+                status: {type: 'string'},
+                source_id: {type: 'number'},
+                search: {type: 'string'},
               },
             },
           },
@@ -62,7 +76,13 @@ export class CrawlJobsController {
       },
     },
   })
-  async getCrawlJobs() {
+  async getCrawlJobs(
+    @param.query.string('status') status?: string,
+    @param.query.number('source_id') source_id?: number,
+    @param.query.string('search') search?: string,
+    @param.query.number('limit') limit?: number,
+    @param.query.number('offset') offset?: number,
+  ) {
     try {
       const user = (this.request as any).user;
       if (!user) {
@@ -70,16 +90,41 @@ export class CrawlJobsController {
           success: false,
           message: 'User not authenticated',
           data: [],
+          filters: { status, source_id, search },
         };
       }
 
-      const crawlJobs = await this.crawlJobsRepository.find({
-        where: {user_id: user.id},
-        order: ['start_time DESC'],
-      });
+      // Build where clause with filters
+      const whereClause: any = { user_id: user.id };
+      
+      // Filter by status
+      if (status) {
+        whereClause.status = status;
+      }
+      
+      // Filter by source_id
+      if (source_id) {
+        whereClause.lead_source_id = source_id;
+      }
 
-      // Parse the params field
-      const jobsWithParsedData = crawlJobs.map(job => {
+      // Build query options
+      const queryOptions: any = {
+        where: whereClause,
+        order: ['start_time DESC'],
+      };
+
+      // Add pagination
+      if (limit) {
+        queryOptions.limit = limit;
+      }
+      if (offset) {
+        queryOptions.skip = offset;
+      }
+
+      const crawlJobs = await this.crawlJobsRepository.find(queryOptions);
+
+      // Parse the params field and apply search filter
+      let jobsWithParsedData = crawlJobs.map(job => {
         let parsedParams: any = {};
         try {
           // Handle both string and object params
@@ -101,10 +146,21 @@ export class CrawlJobsController {
         };
       });
 
+      // Apply search filter if provided
+      if (search) {
+        const searchLower = search.toLowerCase();
+        jobsWithParsedData = jobsWithParsedData.filter(job => 
+          job.title?.toLowerCase().includes(searchLower) ||
+          job.description?.toLowerCase().includes(searchLower) ||
+          JSON.stringify(job.params).toLowerCase().includes(searchLower)
+        );
+      }
+
       return {
         success: true,
         message: 'Crawl jobs retrieved successfully',
         data: jobsWithParsedData,
+        filters: { status, source_id, search },
       };
     } catch (error) {
       console.error('Error fetching crawl jobs:', error);
@@ -112,6 +168,7 @@ export class CrawlJobsController {
         success: false,
         message: 'Failed to fetch crawl jobs',
         data: [],
+        filters: { status, source_id, search },
       };
     }
   }
@@ -245,6 +302,195 @@ export class CrawlJobsController {
       return {
         success: false,
         message: 'Failed to create crawl job',
+        data: null,
+      };
+    }
+  }
+
+  /**
+   * Create multiple crawl jobs in bulk
+   * POST /crawl-jobs/bulk
+   */
+  @post('/crawl-jobs/bulk')
+  @intercept('interceptor.auth')
+  @response(201, {
+    description: 'Bulk crawl jobs created successfully',
+    content: {
+      'application/json': {
+        schema: {
+          type: 'object',
+          properties: {
+            success: {type: 'boolean'},
+            message: {type: 'string'},
+            data: {
+              type: 'object',
+              properties: {
+                created_jobs: {
+                  type: 'array',
+                  items: {
+                    type: 'object',
+                    properties: {
+                      job_id: {type: 'string'},
+                      source_id: {type: 'number'},
+                      title: {type: 'string'},
+                      status: {type: 'string'},
+                    },
+                  },
+                },
+                failed_jobs: {
+                  type: 'array',
+                  items: {
+                    type: 'object',
+                    properties: {
+                      source_id: {type: 'number'},
+                      title: {type: 'string'},
+                      error: {type: 'string'},
+                    },
+                  },
+                },
+                total_created: {type: 'number'},
+                total_failed: {type: 'number'},
+              },
+            },
+          },
+        },
+      },
+    },
+  })
+  async createBulkCrawlJobs(
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: {
+            type: 'object',
+            required: ['jobs'],
+            properties: {
+              jobs: {
+                type: 'array',
+                items: {
+                  type: 'object',
+                  required: ['source_id', 'title', 'params'],
+                  properties: {
+                    source_id: {type: 'number'},
+                    title: {type: 'string'},
+                    params: {type: 'object'},
+                    description: {type: 'string'},
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    })
+    bulkData: {
+      jobs: Array<{
+        source_id: number;
+        title: string;
+        params: any;
+        description?: string;
+      }>;
+    },
+  ) {
+    try {
+      const user = (this.request as any).user;
+      if (!user) {
+        return {
+          success: false,
+          message: 'User not authenticated',
+          data: null,
+        };
+      }
+
+      const createdJobs: any[] = [];
+      const failedJobs: any[] = [];
+
+      // Process each job
+      for (const jobData of bulkData.jobs) {
+        try {
+          // Validate that the lead source exists
+          const leadSource = await this.leadSourcesRepository.findById(jobData.source_id);
+          if (!leadSource) {
+            failedJobs.push({
+              source_id: jobData.source_id,
+              title: jobData.title,
+              error: 'Lead source not found',
+            });
+            continue;
+          }
+
+          // Validate job parameters against the lead source schema
+          const validationResult = await this.validateJobParameters(
+            jobData.source_id,
+            jobData.params,
+          );
+
+          if (!validationResult.valid) {
+            failedJobs.push({
+              source_id: jobData.source_id,
+              title: jobData.title,
+              error: `Invalid parameters: ${validationResult.errors.join(', ')}`,
+            });
+            continue;
+          }
+
+          // Check rate limits
+          const rateLimitCheck = await this.checkRateLimits(user.account_id);
+          if (!rateLimitCheck.allowed) {
+            failedJobs.push({
+              source_id: jobData.source_id,
+              title: jobData.title,
+              error: `Rate limit exceeded: ${rateLimitCheck.message}`,
+            });
+            continue;
+          }
+
+          // Generate UUID for job_id
+          const jobId = uuidv4();
+
+          // Create the crawl job
+          const newJob = await this.crawlJobsRepository.create({
+            job_id: jobId,
+            account_id: user.account_id,
+            user_id: user.id,
+            lead_source_id: jobData.source_id,
+            params: JSON.stringify(jobData.params),
+            status: 'pending',
+            description: jobData.description || undefined,
+            title: jobData.title,
+          });
+
+          createdJobs.push({
+            job_id: newJob.job_id,
+            source_id: jobData.source_id,
+            title: jobData.title,
+            status: newJob.status,
+          });
+        } catch (error) {
+          console.error(`Error creating job for source ${jobData.source_id}:`, error);
+          failedJobs.push({
+            source_id: jobData.source_id,
+            title: jobData.title,
+            error: 'Failed to create job',
+          });
+        }
+      }
+
+      return {
+        success: true,
+        message: `Bulk job creation completed. ${createdJobs.length} created, ${failedJobs.length} failed`,
+        data: {
+          created_jobs: createdJobs,
+          failed_jobs: failedJobs,
+          total_created: createdJobs.length,
+          total_failed: failedJobs.length,
+        },
+      };
+    } catch (error) {
+      console.error('Error creating bulk crawl jobs:', error);
+      return {
+        success: false,
+        message: 'Failed to create bulk crawl jobs',
         data: null,
       };
     }
