@@ -125,6 +125,17 @@ yarn preview
 
 ## 🔧 Configuration
 
+### Environment Variables
+Create a `.env` file in the root directory to configure API settings:
+
+```bash
+# API Configuration
+VITE_API_URL=http://localhost:8000/api
+```
+
+- **Development**: Uses mock API if `VITE_API_URL` is not set
+- **Production**: Uses real API when `VITE_API_URL` is configured
+
 ### Vite Configuration
 - React plugin enabled
 - TypeScript support

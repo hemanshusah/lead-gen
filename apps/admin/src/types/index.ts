@@ -31,3 +31,9 @@ export interface PaginatedResponse<T> {
     totalPages: number;
   };
 }
+
+// Re-export jobs types
+export * from './jobs';
+
+// Re-export datasources types
+export * from './datasources';

@@ -22,6 +22,7 @@ import {
   Th,
   Td,
   Badge,
+  Button,
 } from '@chakra-ui/react';
 import {
   FiUsers,

@@ -1,5 +1,6 @@
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { loginStart, loginSuccess, loginFailure, logout } from '../store/slices/authSlice';
+import { authAPI } from '../services/api';
 
 export const useAuth = () => {
   const dispatch = useAppDispatch();
@@ -9,29 +10,41 @@ export const useAuth = () => {
     dispatch(loginStart());
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await authAPI.login({ email, password });
       
-      if (email === 'admin@example.com' && password === 'password') {
-        dispatch(loginSuccess({
-          id: '1',
-          name: 'Admin User',
-          email: 'admin@example.com',
-          role: 'admin',
-        }));
+      if (response.success && response.user) {
+        // Store token if provided
+        if (response.token) {
+          localStorage.setItem('auth_token', response.token);
+        }
+        
+        dispatch(loginSuccess(response.user));
         return { success: true };
       } else {
         dispatch(loginFailure());
-        return { success: false, error: 'Invalid credentials' };
+        return { 
+          success: false, 
+          error: response.error || 'Invalid credentials' 
+        };
       }
     } catch (error) {
       dispatch(loginFailure());
-      return { success: false, error: 'Login failed' };
+      return { 
+        success: false, 
+        error: error instanceof Error ? error.message : 'Login failed' 
+      };
     }
   };
 
-  const logoutUser = () => {
-    dispatch(logout());
+  const logoutUser = async () => {
+    try {
+      await authAPI.logout();
+    } catch (error) {
+      console.error('Logout error:', error);
+    } finally {
+      localStorage.removeItem('auth_token');
+      dispatch(logout());
+    }
   };
 
   return {

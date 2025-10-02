@@ -14,14 +14,12 @@ import {
   Card,
   CardBody,
 } from '@chakra-ui/react';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { loginStart, loginSuccess, loginFailure } from '../store/slices/authSlice';
+import { useAuth } from '../hooks/useAuth';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const dispatch = useAppDispatch();
-  const { isAuthenticated, isLoading } = useAppSelector((state) => state.auth);
+  const { isAuthenticated, isLoading, login } = useAuth();
   const toast = useToast();
 
   if (isAuthenticated) {
@@ -30,36 +28,25 @@ const Login: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(loginStart());
-
-    // Simulate API call
-    setTimeout(() => {
-      if (email === 'admin@example.com' && password === 'password') {
-        dispatch(
-          loginSuccess({
-            id: '1',
-            name: 'Admin User',
-            email: 'admin@example.com',
-            role: 'admin',
-          })
-        );
-        toast({
-          title: 'Login successful',
-          status: 'success',
-          duration: 3000,
-          isClosable: true,
-        });
-      } else {
-        dispatch(loginFailure());
-        toast({
-          title: 'Invalid credentials',
-          description: 'Please check your email and password',
-          status: 'error',
-          duration: 3000,
-          isClosable: true,
-        });
-      }
-    }, 1000);
+    
+    const result = await login(email, password);
+    
+    if (result.success) {
+      toast({
+        title: 'Login successful',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: 'Login failed',
+        description: result.error || 'Please check your credentials',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
+    }
   };
 
   return (

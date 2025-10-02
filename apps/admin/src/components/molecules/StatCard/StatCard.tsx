@@ -21,16 +21,6 @@ export const StatCard: React.FC<StatCardProps> = ({
   color = 'brand.500',
   onClick,
 }) => {
-  const getChangeColor = () => {
-    switch (changeType) {
-      case 'increase':
-        return 'green.500';
-      case 'decrease':
-        return 'red.500';
-      default:
-        return 'gray.500';
-    }
-  };
 
   return (
     <Box
@@ -60,7 +50,7 @@ export const StatCard: React.FC<StatCardProps> = ({
       {change && (
         <Typography
           variant="caption"
-          color={getChangeColor()}
+          color={changeType === 'increase' ? 'success' : changeType === 'decrease' ? 'error' : 'muted'}
           fontWeight="medium"
         >
           {change}

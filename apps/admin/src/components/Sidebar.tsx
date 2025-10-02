@@ -11,9 +11,10 @@ import { NavLink } from 'react-router-dom';
 import {
   FiHome,
   FiUsers,
-  FiBarChart3,
+  FiBarChart2,
   FiSettings,
   FiLogOut,
+  FiBriefcase,
 } from 'react-icons/fi';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { logout } from '../store/slices/authSlice';
@@ -65,8 +66,9 @@ const Sidebar: React.FC = () => {
 
   const navItems = [
     { icon: FiHome, label: 'Dashboard', to: '/dashboard' },
+    { icon: FiBriefcase, label: 'Jobs', to: '/jobs' },
     { icon: FiUsers, label: 'Users', to: '/dashboard/users' },
-    { icon: FiBarChart3, label: 'Analytics', to: '/dashboard/analytics' },
+    { icon: FiBarChart2, label: 'Analytics', to: '/dashboard/analytics' },
     { icon: FiSettings, label: 'Settings', to: '/dashboard/settings' },
   ];
 
