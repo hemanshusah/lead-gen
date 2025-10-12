@@ -6,7 +6,7 @@ class JobsApiService {
 
   async getJobs(filters: JobsFilters = {}): Promise<JobsResponse> {
     // Use real API endpoint with query parameters
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obkB0ZWNoY29ycC5jb20iLCJuYW1lIjoiSm9obiBTbWl0aCIsInJvbGUiOiJhZG1pbiIsImFjY291bnRfaWQiOiIxIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudCI6eyJpZCI6MSwibmFtZSI6IlRlc3QgQWNjb3VudCIsImRvbWFpbiI6InRlY2hjb3JwLmNvbSIsInN0YXR1cyI6ImFjdGl2ZSJ9LCJpYXQiOjE3NTg5NzExMDIsImV4cCI6MTc1OTA1NzUwMiwiYXVkIjoibGVhZC1nZW4tdXNlcnMiLCJpc3MiOiJsZWFkLWdlbi1hcGkifQ.kuEORZ6c_jbBV04CJgsOEyPgdZ98A-W0r7lzSrNQpHs'    
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obkB0ZWNoY29ycC5jb20iLCJuYW1lIjoiSm9obiBTbWl0aCIsInJvbGUiOiJhZG1pbiIsImFjY291bnRfaWQiOiIxIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudCI6eyJpZCI6MSwibmFtZSI6IlRlc3QgQWNjb3VudCIsImRvbWFpbiI6InRlY2hjb3JwLmNvbSIsInN0YXR1cyI6ImFjdGl2ZSJ9LCJpYXQiOjE3NTk0MjQwNzQsImV4cCI6MTc1OTUxMDQ3NCwiYXVkIjoibGVhZC1nZW4tdXNlcnMiLCJpc3MiOiJsZWFkLWdlbi1hcGkifQ.6Qy3xg1-CRkqtRH6CMFl3lsc136nmNrg2hqSBS6Zn8A'    
     // Build query parameters
     const queryParams = new URLSearchParams();
     
@@ -198,7 +198,7 @@ class JobsApiService {
   }
 
   async getJobInputs(jobId: string): Promise<JobInputs> {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obkB0ZWNoY29ycC5jb20iLCJuYW1lIjoiSm9obiBTbWl0aCIsInJvbGUiOiJhZG1pbiIsImFjY291bnRfaWQiOiIxIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudCI6eyJpZCI6MSwibmFtZSI6IlRlc3QgQWNjb3VudCIsImRvbWFpbiI6InRlY2hjb3JwLmNvbSIsInN0YXR1cyI6ImFjdGl2ZSJ9LCJpYXQiOjE3NTg5NzExMDIsImV4cCI6MTc1OTA1NzUwMiwiYXVkIjoibGVhZC1nZW4tdXNlcnMiLCJpc3MiOiJsZWFkLWdlbi1hcGkifQ.kuEORZ6c_jbBV04CJgsOEyPgdZ98A-W0r7lzSrNQpHs';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obkB0ZWNoY29ycC5jb20iLCJuYW1lIjoiSm9obiBTbWl0aCIsInJvbGUiOiJhZG1pbiIsImFjY291bnRfaWQiOiIxIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudCI6eyJpZCI6MSwibmFtZSI6IlRlc3QgQWNjb3VudCIsImRvbWFpbiI6InRlY2hjb3JwLmNvbSIsInN0YXR1cyI6ImFjdGl2ZSJ9LCJpYXQiOjE3NTk0MjQwNzQsImV4cCI6MTc1OTUxMDQ3NCwiYXVkIjoibGVhZC1nZW4tdXNlcnMiLCJpc3MiOiJsZWFkLWdlbi1hcGkifQ.6Qy3xg1-CRkqtRH6CMFl3lsc136nmNrg2hqSBS6Zn8A';
     
     try {
       const response = await fetch(`http://127.0.0.1:3011/api/v1/crawl-jobs/${jobId}/inputs`, {
@@ -258,7 +258,7 @@ class JobsApiService {
   }
 
   async stopJob(jobId: string): Promise<JobActionResponse> {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obkB0ZWNoY29ycC5jb20iLCJuYW1lIjoiSm9obiBTbWl0aCIsInJvbGUiOiJhZG1pbiIsImFjY291bnRfaWQiOiIxIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudCI6eyJpZCI6MSwibmFtZSI6IlRlc3QgQWNjb3VudCIsImRvbWFpbiI6InRlY2hjb3JwLmNvbSIsInN0YXR1cyI6ImFjdGl2ZSJ9LCJpYXQiOjE3NTg5NzExMDIsImV4cCI6MTc1OTA1NzUwMiwiYXVkIjoibGVhZC1nZW4tdXNlcnMiLCJpc3MiOiJsZWFkLWdlbi1hcGkifQ.kuEORZ6c_jbBV04CJgsOEyPgdZ98A-W0r7lzSrNQpHs';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obkB0ZWNoY29ycC5jb20iLCJuYW1lIjoiSm9obiBTbWl0aCIsInJvbGUiOiJhZG1pbiIsImFjY291bnRfaWQiOiIxIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudCI6eyJpZCI6MSwibmFtZSI6IlRlc3QgQWNjb3VudCIsImRvbWFpbiI6InRlY2hjb3JwLmNvbSIsInN0YXR1cyI6ImFjdGl2ZSJ9LCJpYXQiOjE3NTk0MjQwNzQsImV4cCI6MTc1OTUxMDQ3NCwiYXVkIjoibGVhZC1nZW4tdXNlcnMiLCJpc3MiOiJsZWFkLWdlbi1hcGkifQ.6Qy3xg1-CRkqtRH6CMFl3lsc136nmNrg2hqSBS6Zn8A';
     
     try {
       const response = await fetch(`http://127.0.0.1:3011/api/v1/crawl-jobs/${jobId}/stop`, {
@@ -297,7 +297,7 @@ class JobsApiService {
   }
 
   async deleteJob(jobId: string): Promise<JobActionResponse> {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obkB0ZWNoY29ycC5jb20iLCJuYW1lIjoiSm9obiBTbWl0aCIsInJvbGUiOiJhZG1pbiIsImFjY291bnRfaWQiOiIxIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudCI6eyJpZCI6MSwibmFtZSI6IlRlc3QgQWNjb3VudCIsImRvbWFpbiI6InRlY2hjb3JwLmNvbSIsInN0YXR1cyI6ImFjdGl2ZSJ9LCJpYXQiOjE3NTg5NzExMDIsImV4cCI6MTc1OTA1NzUwMiwiYXVkIjoibGVhZC1nZW4tdXNlcnMiLCJpc3MiOiJsZWFkLWdlbi1hcGkifQ.kuEORZ6c_jbBV04CJgsOEyPgdZ98A-W0r7lzSrNQpHs';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obkB0ZWNoY29ycC5jb20iLCJuYW1lIjoiSm9obiBTbWl0aCIsInJvbGUiOiJhZG1pbiIsImFjY291bnRfaWQiOiIxIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudCI6eyJpZCI6MSwibmFtZSI6IlRlc3QgQWNjb3VudCIsImRvbWFpbiI6InRlY2hjb3JwLmNvbSIsInN0YXR1cyI6ImFjdGl2ZSJ9LCJpYXQiOjE3NTk0MjQwNzQsImV4cCI6MTc1OTUxMDQ3NCwiYXVkIjoibGVhZC1nZW4tdXNlcnMiLCJpc3MiOiJsZWFkLWdlbi1hcGkifQ.6Qy3xg1-CRkqtRH6CMFl3lsc136nmNrg2hqSBS6Zn8A';
     
     try {
       const response = await fetch(`http://127.0.0.1:3011/api/v1/crawl-jobs/${jobId}`, {
@@ -328,7 +328,7 @@ class JobsApiService {
   }
 
   async getJob(jobId: string): Promise<Job> {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obkB0ZWNoY29ycC5jb20iLCJuYW1lIjoiSm9obiBTbWl0aCIsInJvbGUiOiJhZG1pbiIsImFjY291bnRfaWQiOiIxIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudCI6eyJpZCI6MSwibmFtZSI6IlRlc3QgQWNjb3VudCIsImRvbWFpbiI6InRlY2hjb3JwLmNvbSIsInN0YXR1cyI6ImFjdGl2ZSJ9LCJpYXQiOjE3NTg5NzExMDIsImV4cCI6MTc1OTA1NzUwMiwiYXVkIjoibGVhZC1nZW4tdXNlcnMiLCJpc3MiOiJsZWFkLWdlbi1hcGkifQ.kuEORZ6c_jbBV04CJgsOEyPgdZ98A-W0r7lzSrNQpHs';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obkB0ZWNoY29ycC5jb20iLCJuYW1lIjoiSm9obiBTbWl0aCIsInJvbGUiOiJhZG1pbiIsImFjY291bnRfaWQiOiIxIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudCI6eyJpZCI6MSwibmFtZSI6IlRlc3QgQWNjb3VudCIsImRvbWFpbiI6InRlY2hjb3JwLmNvbSIsInN0YXR1cyI6ImFjdGl2ZSJ9LCJpYXQiOjE3NTk0MjQwNzQsImV4cCI6MTc1OTUxMDQ3NCwiYXVkIjoibGVhZC1nZW4tdXNlcnMiLCJpc3MiOiJsZWFkLWdlbi1hcGkifQ.6Qy3xg1-CRkqtRH6CMFl3lsc136nmNrg2hqSBS6Zn8A';
     
     try {
       const response = await fetch(`http://127.0.0.1:3011/api/v1/crawl-jobs/${jobId}`, {

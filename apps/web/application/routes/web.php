@@ -442,6 +442,9 @@ Route::group(['prefix' => 'leads'], function () {
 });
 Route::resource('leads', 'Leads');
 
+//LEADGEN
+Route::get('/leadgen', 'LeadGen@index')->name('leadgen');
+
 //TICKETS
 Route::group(['prefix' => 'tickets'], function () {
     Route::any("/search", "Tickets@index");

@@ -130,6 +130,18 @@
                 </li>
                 @endif
                 <!--leads-->
+
+                <!--leadgen-->
+                <li data-modular-id="main_menu_team_leadgen"
+                    class="sidenav-menu-item {{ $page['mainmenu_leadgen'] ?? '' }} menu-tooltip menu-with-tooltip"
+                    title="LeadGen">
+                    <a class="waves-effect waves-dark" href="/leadgen" aria-expanded="false" target="_self">
+                        <i class="ti-target"></i>
+                        <span class="hide-menu">LeadGen
+                        </span>
+                    </a>
+                </li>
+                <!--leadgen-->
                                 
                 <!--[MODULES] - dynamic menu-->
                 {!! config('modules.menus.main.parent6') !!}

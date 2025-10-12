@@ -10,7 +10,7 @@ dist/
 build/
 .next/
 out/
-
+__MACOSX/
 # Environment variables
 .env
 .env.local
